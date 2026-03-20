@@ -1,13 +1,16 @@
 LATEX ?= pdflatex
 LATEXFLAGS ?= -interaction=nonstopmode -halt-on-error
 
-.PHONY: all cv resume clean clean-cv clean-resume
+.PHONY: all cv resume assets clean clean-cv clean-resume
 
 all: cv.pdf resume.pdf
 
 cv: cv.pdf
 
 resume: resume.pdf
+
+assets: cv.pdf resume.pdf
+	@uv run --with pymupdf python3 scripts/generate_assets.py
 
 cv.pdf: cv/main.tex cv/resume.sty $(wildcard cv/sections/*.tex)
 	@command -v $(LATEX) >/dev/null 2>&1 || { echo "Error: $(LATEX) not found. Install a LaTeX engine or run 'make LATEX=<engine>'."; exit 1; }

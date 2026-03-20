@@ -58,6 +58,14 @@ make
 
 This generates `cv.pdf` and `resume.pdf`.
 
+Generate the README preview assets after building:
+
+```sh
+make assets
+```
+
+This regenerates the PNG previews in `assets/` from `cv.pdf` and `resume.pdf`. Requires `uv` — PyMuPDF is fetched automatically via `uv run`, no manual dependency installation needed.
+
 Build only the CV:
 
 ```sh
