@@ -2,6 +2,12 @@
 
 This repository contains a simple, reusable LaTeX resume template organized into separate section files.
 
+## Preview
+
+[Download the generated PDF](./resume.pdf)
+
+![Resume preview](./assets/resume-preview.png)
+
 ## Structure
 
 - `main.tex` is the root document.
