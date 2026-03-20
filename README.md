@@ -6,7 +6,17 @@ This repository contains a simple, reusable LaTeX resume template organized into
 
 [Download the generated PDF](./resume.pdf)
 
-![Resume preview](./assets/resume-preview.png)
+### Page 1
+
+![Resume preview page 1](./assets/resume-preview-page-1.png)
+
+### Page 2
+
+![Resume preview page 2](./assets/resume-preview-page-2.png)
+
+### Page 3
+
+![Resume preview page 3](./assets/resume-preview-page-3.png)
 
 ## Structure
 
