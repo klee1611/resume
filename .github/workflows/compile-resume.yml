@@ -1,4 +1,4 @@
-name: Compile Resume
+name: Compile CV and Resume
 
 on:
   push:
@@ -25,11 +25,13 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-recommended
 
-      - name: Compile resume
+      - name: Compile documents
         run: make clean && make
 
-      - name: Upload compiled PDF
+      - name: Upload compiled PDFs
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf
-          path: resume.pdf
+          name: cv-and-resume-pdfs
+          path: |
+            cv.pdf
+            resume.pdf

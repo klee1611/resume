@@ -1,0 +1,79 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[2026/03/18 Simple resume template]
+
+\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{helvet}
+\RequirePackage{hyperref}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{titlesec}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.04}
+
+\definecolor{ResumeAccent}{HTML}{1F4E79}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=ResumeAccent
+}
+\urlstyle{same}
+
+\titleformat{\section}{\fontsize{13}{15}\selectfont\bfseries\color{ResumeAccent}}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{0.75em}{0.28em}
+
+\newlist{resumeitems}{itemize}{1}
+\setlist[resumeitems]{
+  label=\textbullet,
+  leftmargin=1.1em,
+  itemsep=0pt,
+  topsep=0.1em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\ResumeName}[1]{%
+  {\centering\fontsize{22}{24}\selectfont\bfseries #1\par}\vspace{0.1em}
+}
+
+\newcommand{\ResumeContactLine}[1]{%
+  {\centering\fontsize{10.5}{11.5}\selectfont #1\par}\vspace{0.02em}
+}
+
+\newcommand{\ResumeTitleLine}[1]{%
+  {\centering\fontsize{11.5}{12.5}\selectfont\bfseries #1\par}\vspace{0.04em}
+}
+
+\newcommand{\ResumeSectionEntry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabularx}
+}
+
+\newcommand{\ResumeSimpleEntry}[2]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2 \\
+  \end{tabularx}\vspace{-0.08em}
+}
+
+\newcommand{\ResumePatentEntry}[3]{%
+  \textbf{#1}\par
+  {\fontsize{10}{11}\selectfont Patent No.: #2 \hfill Filed: #3\par}\vspace{-0.02em}
+}
+
+\newcommand{\ResumeEducationEntry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1}, #2 & #4 \\
+    \multicolumn{2}{@{}p{\textwidth}@{}}{\textit{#3}} \\
+  \end{tabularx}\vspace{-0.05em}
+}

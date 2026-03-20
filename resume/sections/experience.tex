@@ -1,0 +1,28 @@
+\section{Experience}
+\ResumeSimpleEntry{HTC Viverse \textbar{} Senior Engineer @ Research Team}{May. 2022 -- July. 2025}
+\begin{resumeitems}
+\item Served as the Lead Architect for the global commercial launch of Viverse Worlds, driving the end-to-end backend design and serverless edge-routing (AWS Lambda@Edge, Route 53) from inception. Engineered a complex multi-scene data-sharing architecture, autonomously resolving critical backward compatibility constraints to transition the platform into interconnected 3D spaces.
+\item Architected an event-driven recording sidecar bridging low-latency WebRTC/RTP media streams with persistent cloud storage, utilizing AWS for scalable asynchronous data exchange with third-party AI moderation, driving a \$33,000 USD revenue increase.
+\item Eradicated a critical O(N) global database bottleneck by re-architecting a monolithic PostgreSQL schema into a decoupled capacity-tracking system utilizing O(1) row-level locking, yielding a 10x-100x increase in global throughput and stabilizing p99 tail latencies to 2ms-10ms during massive concurrent data mutations.
+\item Spearheaded a multi-worker paradigm shift in the WebRTC core, breaking single-thread CPU ceilings to enable isolated media rooms to dynamically span all available server cores, expanding concurrent capacity from 300 to over 4,500+ consumers per event.
+\item Invented and patented a comprehensive network optimization architecture (US-20250240262-A1) driven by zone-based frequency reduction, 3D frustum culling, and dead reckoning algorithms, slashing distributed system network egress bandwidth by up to 80\%. Concurrently patented an advanced routing mechanism (US-20250363378-A1) applying Reinforcement Learning to dynamically evaluate spatial occlusion.
+\end{resumeitems}
+
+\ResumeSimpleEntry{HTC Vive \textbar{} Senior Engineer}{Sep. 2020 -- May. 2022}
+\begin{resumeitems}
+\item Autonomously identified systemic I/O bottlenecks within the legacy architecture and championed the core platform migration from synchronous Flask to an asynchronous FastAPI ecosystem. Educated the engineering team on modern async Python capabilities and integrated async MongoDB drivers to eliminate Python GIL blocking, achieving an 85\% reduction in microservices API response times.
+\item Designed a Backend-For-Frontend (BFF) architecture utilizing decoupled asynchronous worker queues (Celery, AWS SQS) for CPU-bound 3D asset manipulation, ensuring fault-tolerant, non-blocking API Gateways
+\item Engineered a multi-tenant Role-Based Access Control (RBAC) ecosystem using Domain-Driven Design (DDD), enforcing Polyglot Persistence with MongoDB for flexible schemas and SQLAlchemy/MySQL for strict ACID transactions on storage quotas.
+\end{resumeitems}
+
+\ResumeSimpleEntry{InfoBoom \textbar{} Senior Software Developer (Technical Lead)}{Feb. 2020 -- Sep. 2020}
+\begin{resumeitems}
+\item Led a team of three. Managed the critical path and delivered projects in time.
+\item Re-architected the 3rd-generation core C++ encryption library for a high-security SaaS platform, upgrading cryptographic dependencies while maintaining strict API compatibility to achieve full ISO27001 and Taiwan MAS compliance.
+\item Drove the migration of a legacy monolithic WebRTC server to a scalable Node.js microservice architecture, leveraging MongoDB and RabbitMQ for fault-tolerant, asynchronous inter-service communication.
+\end{resumeitems}
+
+\ResumeSimpleEntry{Synology \textbar{} Product Developer}{Dec. 2016 -- Jun. 2018}
+\begin{resumeitems}
+\item Engineered full-stack mail flow control features in C++ (Postfix/Dovecot), implementing GDPR data privacy mechanisms and resolving critical system-level memory leaks and race conditions.
+\end{resumeitems}

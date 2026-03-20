@@ -1,21 +1,33 @@
-TARGET ?= resume
-MAIN ?= main.tex
 LATEX ?= pdflatex
 LATEXFLAGS ?= -interaction=nonstopmode -halt-on-error
 
-.PHONY: all clean
+.PHONY: all cv resume clean clean-cv clean-resume
 
-all: $(TARGET).pdf
+all: cv.pdf resume.pdf
 
-$(TARGET).pdf: $(MAIN) resume.sty $(wildcard sections/*.tex)
+cv: cv.pdf
+
+resume: resume.pdf
+
+cv.pdf: cv/main.tex cv/resume.sty $(wildcard cv/sections/*.tex)
 	@command -v $(LATEX) >/dev/null 2>&1 || { echo "Error: $(LATEX) not found. Install a LaTeX engine or run 'make LATEX=<engine>'."; exit 1; }
 	@if [ "$(LATEX)" = "tectonic" ]; then \
-		$(LATEX) --keep-logs --keep-intermediates --outdir . $(MAIN); \
-		mv -f $$(basename $(MAIN) .tex).pdf $(TARGET).pdf; \
+		cd cv && $(LATEX) --keep-logs --keep-intermediates --outdir .. main.tex; \
+		mv -f ../main.pdf ../cv.pdf; \
 	else \
-		$(LATEX) $(LATEXFLAGS) -jobname=$(TARGET) $(MAIN); \
-		$(LATEX) $(LATEXFLAGS) -jobname=$(TARGET) $(MAIN); \
+		cd cv && $(LATEX) $(LATEXFLAGS) main.tex && $(LATEX) $(LATEXFLAGS) main.tex && cp -f main.pdf ../cv.pdf; \
+	fi
+
+resume.pdf: resume/main.tex resume/resume.sty $(wildcard resume/sections/*.tex)
+	@command -v $(LATEX) >/dev/null 2>&1 || { echo "Error: $(LATEX) not found. Install a LaTeX engine or run 'make LATEX=<engine>'."; exit 1; }
+	@if [ "$(LATEX)" = "tectonic" ]; then \
+		cd resume && $(LATEX) --keep-logs --keep-intermediates --outdir .. main.tex; \
+		mv -f ../main.pdf ../resume.pdf; \
+	else \
+		cd resume && $(LATEX) $(LATEXFLAGS) main.tex && $(LATEX) $(LATEXFLAGS) main.tex && cp -f main.pdf ../resume.pdf; \
 	fi
 
 clean:
-	rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk $(TARGET).pdf
+	rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk cv.pdf resume.pdf
+	rm -f cv/*.aux cv/*.log cv/*.out cv/*.toc cv/*.fls cv/*.fdb_latexmk cv/*.xdv cv/*.pdf
+	rm -f resume/*.aux resume/*.log resume/*.out resume/*.toc resume/*.fls resume/*.fdb_latexmk resume/*.xdv resume/*.pdf

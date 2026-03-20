@@ -1,10 +1,33 @@
-# Resume LaTeX Template
+# CV and Resume LaTeX Template
 
-This repository contains a simple, reusable LaTeX resume template organized into separate section files.
+This repository contains two related LaTeX document variants:
+
+- `cv/` for the fuller, multi-page curriculum vitae
+- `resume/` for the denser, whitespace-optimized resume
+
+Both are built from a single root `Makefile`.
 
 ## Preview
 
-[Download the generated PDF](./resume.pdf)
+[Download the CV PDF](./cv.pdf)
+
+[Download the Resume PDF](./resume.pdf)
+
+## CV Preview
+
+### Page 1
+
+![CV preview page 1](./assets/cv-preview-page-1.png)
+
+### Page 2
+
+![CV preview page 2](./assets/cv-preview-page-2.png)
+
+### Page 3
+
+![CV preview page 3](./assets/cv-preview-page-3.png)
+
+## Resume Preview
 
 ### Page 1
 
@@ -14,22 +37,12 @@ This repository contains a simple, reusable LaTeX resume template organized into
 
 ![Resume preview page 2](./assets/resume-preview-page-2.png)
 
-### Page 3
-
-![Resume preview page 3](./assets/resume-preview-page-3.png)
-
 ## Structure
 
-- `main.tex` is the root document.
-- `resume.sty` contains the shared layout, spacing, and helper commands.
-- `sections/header.tex` contains your name, contact details, links, and location.
-- `sections/summary.tex` contains your professional summary.
-- `sections/experience.tex` contains your work experience entries.
-- `sections/honors_projects_certifications.tex` contains honors, projects, and certifications.
-- `sections/patents.tex` contains patents or filings.
-- `sections/publications_research.tex` contains publications and academic research.
-- `sections/education.tex` contains education details.
-- `Makefile` builds the final PDF.
+- `cv/` contains the current full CV document and its section files.
+- `resume/` contains the denser resume variant and its section files.
+- Each directory has its own `main.tex`, `resume.sty`, and `sections/` tree.
+- The root `Makefile` builds both final PDFs.
 
 ## Requirements
 
@@ -37,13 +50,25 @@ You need `make` and a LaTeX engine. The default build uses `pdflatex`.
 
 ## Build
 
-Run:
+Build both documents:
 
 ```sh
 make
 ```
 
-This generates `resume.pdf`.
+This generates `cv.pdf` and `resume.pdf`.
+
+Build only the CV:
+
+```sh
+make cv
+```
+
+Build only the resume:
+
+```sh
+make resume
+```
 
 If you want to use a different engine, override `LATEX`:
 
@@ -69,8 +94,8 @@ make clean
 
 ## Customization
 
-Update `sections/header.tex` with your personal details.
+Update `cv/sections/header.tex` and `resume/sections/header.tex` with your personal details.
 
-Replace the placeholder content in each section file with your own resume content.
+Replace the content in the `cv/sections/` and `resume/sections/` files with your own material.
 
-If you want to adjust spacing, colors, or helper commands, edit `resume.sty`.
+If you want to adjust formatting, edit `cv/resume.sty` for the CV or `resume/resume.sty` for the denser resume.
