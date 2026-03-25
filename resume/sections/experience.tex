@@ -1,28 +1,29 @@
 \section{Experience}
+
 \ResumeSimpleEntry{HTC Viverse \textbar{} Senior Engineer @ Research Team}{May. 2022 -- July. 2025}
 \begin{resumeitems}
-\item Served as the Lead Architect for the global commercial launch of Viverse Worlds, driving the end-to-end backend design and serverless edge-routing (AWS Lambda@Edge, Route 53) from inception. Engineered a complex multi-scene data-sharing architecture, autonomously resolving critical backward compatibility constraints to transition the platform into interconnected 3D spaces.
-\item Architected an event-driven recording sidecar bridging low-latency WebRTC/RTP media streams with persistent cloud storage, utilizing AWS for scalable asynchronous data exchange with third-party AI moderation, driving a \$33,000 USD revenue increase.
-\item Eradicated a critical O(N) global database bottleneck by re-architecting a monolithic PostgreSQL schema into a decoupled capacity-tracking system utilizing O(1) row-level locking, yielding a 10x-100x increase in global throughput and stabilizing p99 tail latencies to 2ms-10ms during massive concurrent data mutations.
-\item Spearheaded a multi-worker paradigm shift in the WebRTC core, breaking single-thread CPU ceilings to enable isolated media rooms to dynamically span all available server cores, expanding concurrent capacity from 300 to over 4,500+ consumers per event.
-\item Invented and patented a comprehensive network optimization architecture (US-20250240262-A1) driven by zone-based frequency reduction, 3D frustum culling, and dead reckoning algorithms, slashing distributed system network egress bandwidth by up to 80\%. Concurrently patented an advanced routing mechanism (US-20250363378-A1) applying Reinforcement Learning to dynamically evaluate spatial occlusion.
+\item \textbf{Global Platform Scale}: Served as the Lead Architect for the scalable backend design for the Viverse Worlds global launch. Conceptualized a dynamic URL resolution strategy, partnering with Ops on the edge infrastructure (AWS Lambda@Edge) to scale to 1 million monthly-active users.
+\item \textbf{Algorithmic R\&D (Patented)}: Engineered and patented novel spatial computing algorithms and Machine Learning (Reinforcement Learning) frameworks to dynamically evaluate occlusion, successfully slashing distributed system network egress bandwidth by up to 80\%.
+\item \textbf{AI Integration \& Revenue Growth}: Architected an event-driven AWS sidecar for low-latency WebRTC streams, enabling secure third-party AI moderation and driving a \$33,000 USD revenue increase.
+\item \textbf{Cross-Functional Technical Leadership}: Directed multi-disciplinary engineering pods (Research, BE/FE, Ops) from system design to execution, transitioning the core platform from an isolated, single-scene architecture into an interconnected 3D ecosystem while maintaining strict backward compatibility.
+\item \textbf{Concurrency Optimization}: Engineered a multi-worker paradigm in the WebRTC core to break single-thread CPU limits, scaling concurrent room capacity from 300 to 4,500+ consumers.
 \end{resumeitems}
 
 \ResumeSimpleEntry{HTC Vive \textbar{} Senior Engineer}{Sep. 2020 -- May. 2022}
 \begin{resumeitems}
-\item Autonomously identified systemic I/O bottlenecks within the legacy architecture and championed the core platform migration from synchronous Flask to an asynchronous FastAPI ecosystem. Educated the engineering team on modern async Python capabilities and integrated async MongoDB drivers to eliminate Python GIL blocking, achieving an 85\% reduction in microservices API response times.
-\item Designed a Backend-For-Frontend (BFF) architecture utilizing decoupled asynchronous worker queues (Celery, AWS SQS) for CPU-bound 3D asset manipulation, ensuring fault-tolerant, non-blocking API Gateways
-\item Engineered a multi-tenant Role-Based Access Control (RBAC) ecosystem using Domain-Driven Design (DDD), enforcing Polyglot Persistence with MongoDB for flexible schemas and SQLAlchemy/MySQL for strict ACID transactions on storage quotas.
+\item \textbf{Proactive Leadership \& Standardization}: Autonomously identified legacy I/O bottlenecks and drove a high-performance microservice evolution. Authored an independent, open-source FastAPI boilerplate that HTC Vive officially adopted as its foundational backend standard, reducing new API latency by 85\%.
+\item \textbf{Asynchronous Architecture}: Architected a fault-tolerant Backend-For-Frontend (BFF) layer utilizing Celery and AWS SQS, fully decoupling CPU-heavy 3D asset manipulation to guarantee high availability and eliminate API Gateway timeouts.
+\item \textbf{Multi-Tenant Security}: Engineered a highly scalable Role-Based Access Control (RBAC) ecosystem leveraging Domain-Driven Design (DDD) and polyglot persistence to securely isolate enterprise client data across a multi-tenant platform.
 \end{resumeitems}
 
 \ResumeSimpleEntry{InfoBoom \textbar{} Senior Software Developer (Technical Lead)}{Feb. 2020 -- Sep. 2020}
 \begin{resumeitems}
-\item Led a team of three. Managed the critical path and delivered projects in time.
-\item Re-architected the 3rd-generation core C++ encryption library for a high-security SaaS platform, upgrading cryptographic dependencies while maintaining strict API compatibility to achieve full ISO27001 and Taiwan MAS compliance.
-\item Drove the migration of a legacy monolithic WebRTC server to a scalable Node.js microservice architecture, leveraging MongoDB and RabbitMQ for fault-tolerant, asynchronous inter-service communication.
+\item \textbf{Technical Team Leadership}: Directed a 4-person engineering pod through complex architectural modernizations. Managed critical-path dependencies and unblocked technical constraints to guarantee the on-time delivery of high-security SaaS milestones.
+\item \textbf{Cryptographic Architecture}: Engineered the high-risk modernization of a core C++ encryption library for a high-security SaaS platform, achieving strict zero-regression API compatibility while securing ISO27001 and Taiwan MAS compliance.
+\item \textbf{System Modernization}: Architected the enterprise teardown of a legacy WebRTC monolith, migrating the infrastructure into a highly available, event-driven Node.js microservice ecosystem utilizing MongoDB and RabbitMQ.
 \end{resumeitems}
 
 \ResumeSimpleEntry{Synology \textbar{} Product Developer}{Dec. 2016 -- Jun. 2018}
 \begin{resumeitems}
-\item Engineered full-stack mail flow control features in C++ (Postfix/Dovecot), implementing GDPR data privacy mechanisms and resolving critical system-level memory leaks and race conditions.
+\item \textbf{Core Systems Engineering}: Engineered full-stack mail flow control features natively in C++ (Postfix/Dovecot), resolving critical system-level memory leaks and race conditions.
 \end{resumeitems}
