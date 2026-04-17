@@ -3,7 +3,7 @@ LATEXFLAGS ?= -interaction=nonstopmode -halt-on-error
 
 .PHONY: all cv resume assets clean clean-cv clean-resume
 
-all: cv.pdf resume.pdf
+all: cv.pdf resume.pdf assets
 
 cv: cv.pdf
 
