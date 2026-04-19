@@ -4,5 +4,7 @@
 *.toc
 *.fls
 *.fdb_latexmk
+*.xdv
 cv/main.pdf
 resume/main.pdf
+cover-letter/main.pdf

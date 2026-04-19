@@ -1,4 +1,4 @@
-name: Compile CV and Resume
+name: Compile CV, Resume, and Cover Letter
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
             texlive-fonts-recommended
 
       - name: Compile documents
-        run: make clean && make
+        run: make clean && make cv resume cover-letter
 
       - name: Upload compiled PDFs
         uses: actions/upload-artifact@v7
@@ -35,3 +35,4 @@ jobs:
           path: |
             cv.pdf
             resume.pdf
+            cover-letter.pdf

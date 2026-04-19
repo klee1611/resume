@@ -22,6 +22,7 @@ def main() -> int:
     pdf_targets = [
         (repo_root / "cv.pdf", "cv-preview"),
         (repo_root / "resume.pdf", "resume-preview"),
+        (repo_root / "cover-letter.pdf", "cover-letter-preview"),
     ]
 
     for pdf_path, prefix in pdf_targets:
@@ -32,12 +33,12 @@ def main() -> int:
         for old_file in assets_dir.glob(f"{prefix}-page-*.png"):
             old_file.unlink()
 
-        doc = fitz.open(pdf_path)
-        for index, page in enumerate(doc, start=1):
-            pixmap = page.get_pixmap(matrix=fitz.Matrix(1.35, 1.35), alpha=False)
-            pixmap.save(assets_dir / f"{prefix}-page-{index}.png")
+        with fitz.open(pdf_path) as doc:
+            for index, page in enumerate(doc, start=1):
+                pixmap = page.get_pixmap(matrix=fitz.Matrix(1.35, 1.35), alpha=False)
+                pixmap.save(assets_dir / f"{prefix}-page-{index}.png")
 
-        print(f"Generated {len(doc)} preview page(s) for {pdf_path.name}")
+            print(f"Generated {len(doc)} preview page(s) for {pdf_path.name}")
 
     return 0
 

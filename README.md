@@ -1,17 +1,20 @@
-# CV and Resume LaTeX Template
+# CV, Resume, and Cover Letter
 
-This repository contains two related LaTeX document variants:
+This repository contains three related LaTeX document variants:
 
-- `cv/` for the fuller, multi-page curriculum vitae
-- `resume/` for the denser, whitespace-optimized resume
+- `cv/` — fuller, multi-page curriculum vitae
+- `resume/` — denser, whitespace-optimized single-page resume
+- `cover-letter/` — standard cover letter template with fill-in placeholders
 
-Both are built from a single root `Makefile`.
+Style and shared content live in `shared/` to avoid duplication across documents.
 
 ## Preview
 
 [Download the CV PDF](./cv.pdf)
 
 [Download the Resume PDF](./resume.pdf)
+
+[Download the Cover Letter PDF](./cover-letter.pdf)
 
 ## CV Preview
 
@@ -39,10 +42,28 @@ Both are built from a single root `Makefile`.
 
 ## Structure
 
-- `cv/` contains the current full CV document and its section files.
-- `resume/` contains the denser resume variant and its section files.
-- Each directory has its own `main.tex`, `resume.sty`, and `sections/` tree.
-- The root `Makefile` builds both final PDFs.
+```
+cv/                   CV-specific style and section files
+  resume.sty
+  main.tex
+  sections/
+resume/               Resume-specific section files
+  main.tex
+  sections/
+cover-letter/         Cover letter section files
+  main.tex
+  sections/
+shared/               Shared between resume and cover-letter
+  resume.sty          Common LaTeX style package
+  sections/
+    header.tex        Name, title, and contact line
+scripts/              Build helper scripts
+assets/               Generated PNG previews
+```
+
+The root `Makefile` builds all three PDFs. The CV uses its own `resume.sty`
+(different margins and font settings); `resume` and `cover-letter` share
+`shared/resume.sty` via `TEXINPUTS`.
 
 ## Requirements
 
@@ -50,13 +71,13 @@ You need `make` and a LaTeX engine. The default build uses `pdflatex`.
 
 ## Build
 
-Build both documents:
+Build all documents:
 
 ```sh
 make
 ```
 
-This generates `cv.pdf` and `resume.pdf`.
+This generates `cv.pdf`, `resume.pdf`, and `cover-letter.pdf`.
 
 Generate the README preview assets after building:
 
@@ -64,7 +85,7 @@ Generate the README preview assets after building:
 make assets
 ```
 
-This regenerates the PNG previews in `assets/` from `cv.pdf` and `resume.pdf`. Requires `uv` — PyMuPDF is fetched automatically via `uv run`, no manual dependency installation needed.
+This regenerates the PNG previews in `assets/` from all three PDFs. Requires `uv` — PyMuPDF is fetched automatically via `uv run`, no manual dependency installation needed.
 
 Build only the CV:
 
@@ -76,6 +97,12 @@ Build only the resume:
 
 ```sh
 make resume
+```
+
+Build only the cover letter:
+
+```sh
+make cover-letter
 ```
 
 If you want to use a different engine, override `LATEX`:
@@ -102,8 +129,11 @@ make clean
 
 ## Customization
 
-Update `cv/sections/header.tex` and `resume/sections/header.tex` with your personal details.
+Update `shared/sections/header.tex` with your personal details (used by both resume and cover letter).
+Update `cv/sections/header.tex` separately for the CV.
 
-Replace the content in the `cv/sections/` and `resume/sections/` files with your own material.
+Replace the content in the `cv/sections/`, `resume/sections/`, and `cover-letter/sections/` files with your own material.
 
-If you want to adjust formatting, edit `cv/resume.sty` for the CV or `resume/resume.sty` for the denser resume.
+Fill in the `[placeholder]` fields in `cover-letter/sections/body.tex` for each application.
+
+To adjust formatting, edit `cv/resume.sty` for the CV or `shared/resume.sty` for the resume and cover letter.
